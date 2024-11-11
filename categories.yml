@@ -2,7 +2,7 @@ categories:
 # 类别ID，值无关紧要，必须是唯一的
   1:
     # 此处支持类别名称和颜色代码
-    name: "食物"
+    name: "食品"
     # 占位符显示在“类别”菜单中，项目元格式如所述https://docs.brcdev.net/#/item-meta
     placeholder:
       material: BREAD

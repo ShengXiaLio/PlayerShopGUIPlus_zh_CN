@@ -1,6 +1,6 @@
 menu:
   main:
-    name: "玩家商店"
+    name: "&l玩家商店"
     rows: 5
     fill:
       item:
@@ -47,7 +47,7 @@ menu:
         item:
           material: PLAYER_HEAD
           quantity: 1
-          name: "&6&l你的商店"
+          name: "&6&l您的商店"
           lore:
             - "&7您有 %number% 个"
             - "&7商店里的物品。"
@@ -62,7 +62,7 @@ menu:
             - "&7未认领的物品。"
         slot: 34
   shops:
-    name: "所有商店"
+    name: "&l所有商店"
     rows: 6
     fill:
       item:
@@ -98,7 +98,7 @@ menu:
       - "&7店主：&6%owner%"
       - "&7物品：&6%items%"
   items:
-    name: "所有物品"
+    name: "&l所有物品"
     rows: 6
     fill:
       item:
@@ -143,7 +143,7 @@ menu:
       - "&7价格：&6%price%"
       - "&7剩余时间：&6%timeleft%"
   categories:
-    name: "所有分类"
+    name: "&l所有分类"
     rows: 6
     fill:
       item:
@@ -178,7 +178,7 @@ menu:
     lore:
       - "&7物品：&6%items%"
   own:
-    name: "你的商品"
+    name: "&l您的商品"
     rows: 6
     fill:
       item:
@@ -319,7 +319,7 @@ menu:
       - "&7价格：&6%price%"
       - "&7剩余时间：&6%timeleft%"
   searchShops:
-    name: "商店搜索结果"
+    name: "&l商店搜索结果"
     rows: 6
     fill:
       item:
@@ -355,7 +355,7 @@ menu:
       - "&7店主：&6%owner%"
       - "&7商品：&6%items%"
   searchItems:
-    name: "商品搜索结果"
+    name: "&l商品搜索结果"
     rows: 6
     fill:
       item:
@@ -400,7 +400,7 @@ menu:
       - "&7价格：&6%price%"
       - "&7剩余时间：&6%timeleft%"
   unclaimed:
-    name: "未认领商品"
+    name: "&l未认领商品"
     rows: 6
     fill:
       item:
@@ -506,7 +506,7 @@ menu:
       - "&7当前价格：&6%currentprice%"
       - "&7剩余时间：&6%timeleft%"
   cancel:
-    name: "取消商品批量"
+    name: "&l取消商品批量"
     rows: 6
     itemSlot: 22
     buttons:
