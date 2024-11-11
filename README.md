@@ -1,4 +1,4 @@
-# PlayerShopGUI_zh_CN
+# PlayerShopGUIPlus_zh_CN
 
 
 PlayerShopGUI+汉化
