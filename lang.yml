@@ -1,0 +1,182 @@
+PREFIX: '&6玩家商店 > &f'
+LANG:
+  CONSOLE: 控制台
+MSG:
+  ERROR: 发生错误，请与服务器所有者联系。
+  INGAMEONLY: 此命令只能在游戏内使用。
+  NOACCESS: 您没有权限执行此操作。
+  SHOPSNOTLOADED: 商店尚未加载，请稍后再试。
+  NOTLOADED: 您的数据尚未加载，请稍后再试。
+  WORLDBANNED: 在这个世界中已禁用玩家商店。
+  GAMEMODEBANNED: 当您处于%gamemode%游戏模式时，无法访问玩家商店。
+  USAGE:
+    PLAYERSHOP: '无效的命令使用方式。正确用法：/playershop [reload]'
+    SUBCOMMAND: '无效的命令使用方式。正确用法：%usage%'
+  PLAYERSHOP:
+    RELOAD:
+      RELOADED: 配置已重新加载！
+    SELL:
+      QUANTITY: 数量
+      PRICE: 价格
+      VALUEINVALID: 指定的%setting%无效。
+      VALUETOOLOW: 指定的%setting%太小。您需要至少指定%value%。
+      VALUETOOHIGH: 指定的%setting%太高。您不能指定超过%value%。
+      TOOFEWITEM: 您需要至少%quantity% x %item%才能出售。
+      NOITEM: 您必须手持物品才能出售。
+      BANNEDITEM: 您不能出售此物品。
+      LIMIT: 您不能同时出售超过%limit%件物品。
+      UNCLAIMEDLIMIT: 请先领取您的过期/未认领物品。
+      CREATED: 您已上架%quantity% x %item%&f，售价为%price%。
+      BROADCAST: '%player%上架了%quantity% x %item%&f，售价为%price%！'
+    SHOP:
+      NOSHOP: 未找到该玩家名称的商店。
+  BUY:
+    BOUGHTBY: '%player%从您这里购买了%quantity% x %item%&f，支付了%price%。'
+  SHOPITEM:
+    EXPIRED: 您的出售报价（%quantity% x %item%）已过期。
+  SEARCHSHOPS:
+    ENTER: 输入要搜索的商店名称。输入“%cancel%”以取消。
+    CANCELLED: 您已取消商店搜索。
+  SEARCHITEMS:
+    ENTER: 输入要搜索的物品名称。输入“%cancel%”以取消。
+    CANCELLED: 您已取消物品搜索。
+  EDITSHOPNAME:
+    ENTER: 输入商店的新名称。输入“%cancel%”以取消。
+    CANCELLED: 您已取消商店名称编辑。
+  ITEMLOT:
+    CANCELLED: 您的%quantity% x %item%出售批量被%player%取消。
+  NUMBERFORMAT:
+    SHORTSCALE:
+      THOUSAND: ' 千'
+      MILLION: ' 百万'
+      BILLION: ' 十亿'
+      TRILLION: ' 万亿'
+      QUADRILLION: ' 千万亿'
+      QUINTILLION: ' 五千万亿'
+      SEXTILLION: ' 六千万亿'
+      SEPTILLION: ' 七千万亿'
+      OCTILLION: ' 八千万亿'
+      NONILLION: ' 九千万亿'
+      DECILLION: ' 十亿亿'
+SHOPITEM:
+  SELLER:
+    NONE: 无
+  LISTORDER:
+    OLDESTTONEWEST: 最旧 -> 最新
+    NEWESTTOOLDEST: 最新 -> 最旧
+NOTIFICATION:
+  CONFIRM: '&a&l确定'
+  BUY:
+    CANNOTBUYOWN:
+      TITLE: 无法购买物品
+      MESSAGE: '&c&l不能购买自己的物品'
+      DESC: '&7您不能购买自己的物品。'
+    CANNOTAFFORD:
+      TITLE: 无法购买物品
+      MESSAGE: '&c&l买不起该物品。'
+      DESC: '&7您需要%price%来购买%quantity% x %item%&7。'
+    FULLINVENTORY:
+      TITLE: 无法购买物品
+      MESSAGE: '&c&l您的背包已满'
+      DESC: '&7您的背包没有足够的空位。'
+    BOUGHT:
+      TITLE: 物品购买成功
+      MESSAGE: '&a&l物品购买成功。'
+      DESC: |-
+        &7您从%owner%处购买了%quantity%
+        &7x %item%&7，支付了%price%。
+  CANCEL:
+    CANCELLED:
+      TITLE: 物品批量取消成功
+      MESSAGE: '&a&l物品批量取消成功。'
+      DESC: |-
+        &7您取消了%owner%的
+        &7%quantity% x %item%
+        &7物品批量。
+  CLAIM:
+    FULLINVENTORY:
+      TITLE: 无法领取物品
+      MESSAGE: '&c&l您的背包已满'
+      DESC: '&7您的背包没有足够的空位。'
+    CLAIMED:
+      TITLE: 物品领取成功
+      MESSAGE: '&a&l物品领取成功。'
+      DESC: |-
+        &7您领取了%quantity%
+        &7x %item%&7。
+  SEARCHSHOPS:
+    NOTFOUND:
+      TITLE: 未找到商店
+      MESSAGE: '&c&l未找到商店'
+      DESC: |-
+        &7未找到指定名称或所有者的商店。
+  SEARCHITEMS:
+    NOTFOUND:
+      TITLE: 未找到物品
+      MESSAGE: '&c&l未找到物品'
+      DESC: |-
+        &7未找到指定名称或所有者的物品。
+  EDITSHOPNAME:
+    BANNEDNAME:
+      TITLE: 无法重命名商店
+      MESSAGE: '&c&l无法重命名商店'
+      DESC: |-
+        &7您不能使用这个
+        &7商店名称。
+    EDITED:
+      TITLE: 商店名称已更改
+      MESSAGE: '&a&l商店名称已更改'
+      DESC: |-
+        &7商店名称已成功更改为
+        &7%name%。
+  EXPIRED:
+    TITLE: 物品已过期
+    MESSAGE: '&c&l物品已过期'
+    DESC: |-
+      &7该物品不再
+      &7可用。
+  NOACCESS:
+    TITLE: 无权限
+    MESSAGE: '&a&l您没有权限'
+    DESC: |-
+      &7您没有权限
+      &7执行此操作。
+TIME:
+  NOW: 现在
+  LESSTHAN: 少于%time%
+  YEARS:
+    SINGULAR: 年
+    PLURAL: 年
+    SHORT: y
+  MONTHS:
+    SINGULAR: 月
+    PLURAL: 月
+    SHORT: mo
+  WEEKS:
+    SINGULAR: 周
+    PLURAL: 周
+    SHORT: w
+  DAYS:
+    SINGULAR: 天
+    PLURAL: 天
+    SHORT: d
+  HOURS:
+    SINGULAR: 小时
+    PLURAL: 小时
+    SHORT: h
+  MINUTES:
+    SINGULAR: 分钟
+    PLURAL: 分钟
+    SHORT: m
+  SECONDS:
+    SINGULAR: 秒
+    PLURAL: 秒
+    SHORT: s
+TAX:
+  TAKEN: 您因出售物品被收取了%tax%。
+  EXPIRED:
+    REFUNDED: 由于您的物品过期，您被退还了%tax%。
+  INSUFFICIENT:
+    FUNDS: 您没有足够的资金来发布您的物品！您需要额外的%amount%。
+  SELLER:
+    REFUNDED: 由于物品成功出售，您被退还了%tax%。

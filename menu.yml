@@ -1,0 +1,616 @@
+menu:
+  main:
+    name: "玩家商店"
+    rows: 5
+    fill:
+      item:
+        material: GRAY_STAINED_GLASS_PANE
+        quantity: 1
+    buttons:
+      shops:
+        item:
+          material: CHEST
+          quantity: 1
+          name: "&6&l浏览商店"
+          lore: 
+            - "&7有 %number% 个玩家商店。"
+        slot: 11
+      items:
+        item:
+          material: CHEST
+          quantity: 1
+          name: "&6&l浏览物品"
+          lore:
+            - "&7有 %number% 个物品。"
+        slot: 13
+      categories:
+        item:
+          material: CHEST
+          quantity: 1
+          name: "&6&l浏览分类"
+          lore:
+            - "&7有 %number% 个分类。"
+        slot: 15
+      searchShops:
+        item:
+          material: BOOK
+          quantity: 1
+          name: "&6&l搜索商店"
+        slot: 28
+      searchItems:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l搜索物品"
+        slot: 30
+      own:
+        item:
+          material: PLAYER_HEAD
+          quantity: 1
+          name: "&6&l你的商店"
+          lore:
+            - "&7您有 %number% 个"
+            - "&7商店里的物品。"
+        slot: 32
+      unclaimed:
+        item:
+          material: ENDER_CHEST
+          quantity: 1
+          name: "&6&l未认领物品"
+          lore:
+            - "&7您有 %number% 个"
+            - "&7未认领的物品。"
+        slot: 34
+  shops:
+    name: "所有商店"
+    rows: 6
+    fill:
+      item:
+        material: GRAY_STAINED_GLASS_PANE
+        quantity: 1
+    buttons:
+      previousPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l上一页"
+        slot: 45
+      nextPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l下一页"
+        slot: 53
+      refresh:
+        item:
+          material: NETHER_STAR
+          quantity: 1
+          name: "&6&l刷新"
+        slot: 48
+      back:
+        item:
+          material: RED_STAINED_GLASS
+          quantity: 1
+          name: "&6&l返回主菜单"
+        slot: 50
+    replaceLore: false
+    lore:
+      - "&7店主：&6%owner%"
+      - "&7物品：&6%items%"
+  items:
+    name: "所有物品"
+    rows: 6
+    fill:
+      item:
+        material: GRAY_STAINED_GLASS_PANE
+        quantity: 1
+    buttons:
+      previousPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l上一页"
+        slot: 45
+      nextPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l下一页"
+        slot: 53
+      refresh:
+        item:
+          material: NETHER_STAR
+          quantity: 1
+          name: "&6&l刷新"
+        slot: 48
+      order:
+        item:
+          material: CHEST
+          quantity: 1
+          name: "&6&l更改物品排序"
+          lore:
+            - "&7当前排序：&f%order%"
+        slot: 49
+      back:
+        item:
+          material: RED_STAINED_GLASS
+          quantity: 1
+          name: "&6&l返回主菜单"
+        slot: 50
+    replaceLore: false
+    lore:
+      - "&7卖家：&6%owner%"
+      - "&7价格：&6%price%"
+      - "&7剩余时间：&6%timeleft%"
+  categories:
+    name: "所有分类"
+    rows: 6
+    fill:
+      item:
+        material: GRAY_STAINED_GLASS_PANE
+        quantity: 1
+    buttons:
+      previousPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l上一页"
+        slot: 45
+      nextPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l下一页"
+        slot: 53
+      refresh:
+        item:
+          material: NETHER_STAR
+          quantity: 1
+          name: "&6&l刷新"
+        slot: 48
+      back:
+        item:
+          material: RED_STAINED_GLASS
+          quantity: 1
+          name: "&6&l返回主菜单"
+        slot: 50
+    replaceLore: false
+    lore:
+      - "&7物品：&6%items%"
+  own:
+    name: "你的商品"
+    rows: 6
+    fill:
+      item:
+        material: GRAY_STAINED_GLASS_PANE
+        quantity: 1
+    buttons:
+      previousPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l上一页"
+        slot: 45
+      nextPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l下一页"
+        slot: 53
+      refresh:
+        item:
+          material: NETHER_STAR
+          quantity: 1
+          name: "&6&l刷新"
+        slot: 48
+      order:
+        item:
+          material: CHEST
+          quantity: 1
+          name: "&6&l更改商品排序"
+          lore:
+            - "&7当前排序：&f%order%"
+        slot: 49
+      editName:
+        item:
+          material: WRITABLE_BOOK
+          quantity: 1
+          name: "&6&l编辑商店名称"
+        slot: 53
+      back:
+        item:
+          material: RED_STAINED_GLASS
+          quantity: 1
+          name: "&6&l返回主菜单"
+        slot: 50
+    replaceLore: false
+    lore:
+      - "&7卖家：&6%owner%"
+      - "&7价格：&6%price%"
+      - "&7剩余时间：&6%timeleft%"
+  shop:
+    name: "%name%"
+    rows: 6
+    fill:
+      item:
+        material: GRAY_STAINED_GLASS_PANE
+        quantity: 1
+    buttons:
+      previousPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l上一页"
+        slot: 45
+      nextPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l下一页"
+        slot: 53
+      refresh:
+        item:
+          material: NETHER_STAR
+          quantity: 1
+          name: "&6&l刷新"
+        slot: 48
+      order:
+        item:
+          material: CHEST
+          quantity: 1
+          name: "&6&l更改商品排序"
+          lore:
+            - "&7当前排序：&f%order%"
+        slot: 49
+      back:
+        item:
+          material: RED_STAINED_GLASS
+          quantity: 1
+          name: "&6&l返回商店列表"
+        slot: 50
+    replaceLore: false
+    lore:
+      - "&7卖家：&6%owner%"
+      - "&7价格：&6%price%"
+      - "&7剩余时间：&6%timeleft%"
+  category:
+    name: "%name%"
+    rows: 6
+    fill:
+      item:
+        material: GRAY_STAINED_GLASS_PANE
+        quantity: 1
+    buttons:
+      previousPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l上一页"
+        slot: 45
+      nextPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l下一页"
+        slot: 53
+      refresh:
+        item:
+          material: NETHER_STAR
+          quantity: 1
+          name: "&6&l刷新"
+        slot: 48
+      order:
+        item:
+          material: CHEST
+          quantity: 1
+          name: "&6&l更改商品排序"
+          lore:
+            - "&7Currently sorted: &f%order%"
+        slot: 49
+      back:
+        item:
+          material: RED_STAINED_GLASS
+          quantity: 1
+          name: "&6&l返回分类列表"
+        slot: 50
+    replaceLore: false
+    lore:
+      - "&7卖家：&6%owner%"
+      - "&7价格：&6%price%"
+      - "&7剩余时间：&6%timeleft%"
+  searchShops:
+    name: "商店搜索结果"
+    rows: 6
+    fill:
+      item:
+        material: GRAY_STAINED_GLASS_PANE
+        quantity: 1
+    buttons:
+      previousPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l上一页"
+        slot: 45
+      nextPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l下一页"
+        slot: 53
+      refresh:
+        item:
+          material: NETHER_STAR
+          quantity: 1
+          name: "&6&l刷新"
+        slot: 48
+      back:
+        item:
+          material: RED_STAINED_GLASS
+          quantity: 1
+          name: "&6&l返回主菜单"
+        slot: 50
+    replaceLore: false
+    lore:
+      - "&7店主：&6%owner%"
+      - "&7商品：&6%items%"
+  searchItems:
+    name: "商品搜索结果"
+    rows: 6
+    fill:
+      item:
+        material: GRAY_STAINED_GLASS_PANE
+        quantity: 1
+    buttons:
+      previousPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l上一页"
+        slot: 45
+      nextPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l下一页"
+        slot: 53
+      refresh:
+        item:
+          material: NETHER_STAR
+          quantity: 1
+          name: "&6&l刷新"
+        slot: 48
+      order:
+        item:
+          material: CHEST
+          quantity: 1
+          name: "&6&l更改商品排序"
+          lore:
+            - "&7当前排序：&f%order%"
+        slot: 49
+      back:
+        item:
+          material: RED_STAINED_GLASS
+          quantity: 1
+          name: "&6&l返回主菜单"
+        slot: 50
+    replaceLore: false
+    lore:
+      - "&7卖家：&6%owner%"
+      - "&7价格：&6%price%"
+      - "&7剩余时间：&6%timeleft%"
+  unclaimed:
+    name: "未认领商品"
+    rows: 6
+    fill:
+      item:
+        material: GRAY_STAINED_GLASS_PANE
+        quantity: 1
+    buttons:
+      previousPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l上一页"
+        slot: 45
+      nextPage:
+        item:
+          material: PAPER
+          quantity: 1
+          name: "&6&l下一页"
+        slot: 53
+      refresh:
+        item:
+          material: NETHER_STAR
+          quantity: 1
+          name: "&6&l刷新"
+        slot: 48
+      order:
+        item:
+          material: CHEST
+          quantity: 1
+          name: "&6&l更改商品排序"
+          lore:
+            - "&7当前排序：&f%order%"
+        slot: 49
+      back:
+        item:
+          material: RED_STAINED_GLASS
+          quantity: 1
+          name: "&6&l返回主菜单"
+        slot: 50
+    replaceLore: false
+  buy:
+    name: "购买 %name%"
+    rows: 6
+    itemSlot: 22
+    buttons:
+      less3:
+        item:
+          material: RED_STAINED_GLASS_PANE
+          quantity: 1
+          name: "&c&l减去 10"
+        value: 10
+        slot: 18
+      less2:
+        item:
+          material: RED_STAINED_GLASS_PANE
+          quantity: 1
+          name: "&c&l减去 5"
+        value: 5
+        slot: 19
+      less1:
+        item:
+          material: RED_STAINED_GLASS_PANE
+          quantity: 1
+          name: "&c&l减去 1"
+        value: 1
+        slot: 20
+      more1:
+        item:
+          material: LIME_STAINED_GLASS_PANE
+          quantity: 1
+          name: "&a&l加上 1"
+        value: 1
+        slot: 24
+      more2:
+        item:
+          material: LIME_STAINED_GLASS_PANE
+          quantity: 1
+          name: "&a&l加上 5"
+        value: 5
+        slot: 25
+      more3:
+        item:
+          material: LIME_STAINED_GLASS_PANE
+          quantity: 1
+          name: "&a&l加上 10"
+        value: 10
+        slot: 26
+      confirm:
+        item:
+          material: LIME_STAINED_GLASS
+          quantity: 1
+          name: "&a&l购买"
+        slot: 39
+      cancel:
+        item:
+          material: RED_STAINED_GLASS
+          quantity: 1
+          name: "&c&l取消"
+        slot: 41
+    replaceLore: false
+    lore:
+      - "&7卖家：&6%owner%"
+      - "&7原价：&6%price%"
+      - "&7当前价格：&6%currentprice%"
+      - "&7剩余时间：&6%timeleft%"
+  cancel:
+    name: "取消商品批量"
+    rows: 6
+    itemSlot: 22
+    buttons:
+      confirm:
+        item:
+          material: LIME_STAINED_GLASS
+          quantity: 1
+          name: "&a&l取消批量"
+        slot: 39
+      cancel:
+        item:
+          material: RED_STAINED_GLASS
+          quantity: 1
+          name: "&c&l返回"
+        slot: 41
+    replaceLore: false
+    lore:
+      - "&7卖家：&6%owner%"
+      - "&7价格：&6%price%"
+      - "&7剩余时间：&6%timeleft%"
+
+notifications:
+  error:
+    rows: 6
+    buttons:
+      message:
+        item:
+          material: BARRIER
+          quantity: 1
+        slot: 22
+      confirm:
+        item:
+          material: LIME_STAINED_GLASS
+          quantity: 1
+        slot: 40
+  warning:
+    rows: 6
+    buttons:
+      message:
+        item:
+          material: YELLOW_STAINED_GLASS_PANE
+          quantity: 1
+        slot: 22
+      confirm:
+        item:
+          material: LIME_STAINED_GLASS
+          quantity: 1
+        slot: 40
+  success:
+    rows: 6
+    buttons:
+      message:
+        item:
+          material: LIME_STAINED_GLASS_PANE
+          quantity: 1
+        slot: 22
+      confirm:
+        item:
+          material: LIME_STAINED_GLASS
+          quantity: 1
+        slot: 40
+        notifications:
+  error:
+    rows: 6
+    buttons:
+      message:
+        item:
+          material: BARRIER
+          quantity: 1
+          name: "&c错误信息"
+        slot: 22
+      confirm:
+        item:
+          material: LIME_STAINED_GLASS
+          quantity: 1
+          name: "&a确认"
+        slot: 40
+  warning:
+    rows: 6
+    buttons:
+      message:
+        item:
+          material: YELLOW_STAINED_GLASS_PANE
+          quantity: 1
+          name: "&e警告信息"
+        slot: 22
+      confirm:
+        item:
+          material: LIME_STAINED_GLASS
+          quantity: 1
+          name: "&a确认"
+        slot: 40
+  success:
+    rows: 6
+    buttons:
+      message:
+        item:
+          material: LIME_STAINED_GLASS_PANE
+          quantity: 1
+          name: "&a成功信息"
+        slot: 22
+      confirm:
+        item:
+          material: LIME_STAINED_GLASS
+          quantity: 1
+          name: "&a确认"
+        slot: 40

@@ -1,0 +1,204 @@
+#
+# 有关 PlayerShopGUI+ 的 Wiki，请查看以下链接：
+# https://docs.brcdev.net/ -> 'General' 和 'PlayerShopGUI+' 部分都适用于 PlayerShopGUI+
+#
+database:
+  # 数据库后端类型，可以设置为 mysql 或 sqlite
+  type: sqlite
+  # MySQL 数据库主机
+  mySQLHost: localhost
+  # MySQL 连接端口号
+  mySQLPort: 3306
+  # MySQL 数据库名称
+  mySQLDatabase: db
+  # MySQL 数据库用户
+  mySQLUser: root
+  # MySQL 用户的密码
+  mySQLPassword: ""
+  # MySQL 表名称
+  tableNames:
+    players: players
+    shops: shops
+
+# 日志设置
+log:
+  # 定义是否将交易记录到控制台/主服务器日志
+  toConsole: true
+  # 定义是否将交易记录到单独的日志文件
+  toFile: false
+  # 交易的日期格式 (http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+  formatDate: "yyyy/MM/dd HH:mm:ss"
+  # 日志消息格式
+  messageFormats:
+    sell: "%owner% 上架了 %quantity% x %item% 出售！价格：%price%，时长：%duration%"
+    bought: "%buyer% 从 %owner% 处购买了 %quantity% x %item%，价格为 %price%。"
+    expired: "%owner% 的 %quantity% x %item% 已过期。"
+    cancelled: "%player% 取消了 %owner% 的 %quantity% x %item% 出售，价格为 %price%。"
+
+# 默认设置，用于未指定时出售的物品
+defaultSettings:
+  quantity: 1
+  price: 100.0
+
+# 出售物品的最小设置值（设置为 -1 表示无限制）
+minSettings:
+  quantity: -1
+  price: -1
+
+# 出售物品的最大设置值（设置为 -1 表示无限制），64 是最大支持的数量
+maxSettings:
+  quantity: 64
+  price: -1
+
+# 选择玩家同时能出售的物品数量，权限格式为 playershopguiplus.limit.NAME，例如 playershopguiplus.limit.default
+limits:
+  # "default" 是必需的
+  default: 10
+  donator: 50
+
+# 选择玩家同时能拥有的未认领物品数量，权限格式为 playershopguiplus.unclaimedlimit.NAME，例如 playershopguiplus.unclaimedlimit.default
+unclaimedLimits:
+  # "default" 是必需的
+  default: 20
+  donator: 40
+
+# 税收设置。
+tax:
+  # 玩家出售物品时，是否应该从售价中扣除一部分作为销售成本？
+  tax: false
+  # 选择从玩家那里扣除多少作为销售价值的比例。0.2 = 20%
+  taxAmount: 0.2
+  # 当物品过期时，玩家是否应该退还税收？
+  refund:
+    # 当卖家的物品被购买时退还税收金额。
+    purchase: false
+    # 当物品过期时退还税收金额。
+    expired: false
+    # 当物品被卖家或有权限的管理员强制取消时退还税收金额。
+    cancelled: false
+  # 选择退还给玩家的税收金额比例。1 = 100%
+  refundAmount: 1
+
+# 玩家不能出售的物品列表。更多信息请查看这里 FAQ #1：
+bannedItems:
+  1:
+    material: BEACON
+    compareQuantity: false
+    compareItemMeta: false
+
+# 日期格式；更多信息：https://docs.oracle.com/javase/tutorial/i18n/format/simpleDateFormat.html
+dateFormat: "dd.MM.yyyy, HH:mm"
+
+# 选择哪些游戏模式会阻止玩家访问玩家商店。有效值：ADVENTURE, CREATIVE, SPECTATOR, SURVIVAL
+disableInGamemodes:
+  - ADVENTURE
+  - CREATIVE
+  - SPECTATOR
+
+# 选择在哪些世界中完全禁用玩家商店
+disableInWorlds: []
+
+# 玩家不能使用包含以下词汇/短语的商店名称
+bannedShopNames:
+  - fuck
+  - ass
+
+economy:
+  # 用于所有商店的经济系统。
+  # 支持的经济系统：
+  #  - EXP （默认的 Minecraft 经验点）
+  #  - VAULT （需要 http://dev.bukkit.org/bukkit-plugins/vault/）
+  #  - GEMS_ECONOMY （需要 https://www.spigotmc.org/resources/gemseconomy.19655/）
+  #  - GRINGOTTS （需要 https://www.spigotmc.org/resources/gringotts.42071/）
+  #  - PLAYER_POINTS （需要 https://dev.bukkit.org/projects/playerpoints）
+  #  - TOKEN_ENCHANT （需要 https://www.spigotmc.org/resources/tokenenchant.2287/）
+  type: VAULT
+  # 用于价格格式化的前缀和后缀。格式为 ECONOMYTYPE: "value"
+  prefixes:
+    VAULT: "$"
+  suffixes:
+    VAULT: ""
+
+# 选择物品在过期前可以购买的时间（以分钟为单位，设置为 -1 禁用）
+shopItemDuration: 4320
+# 选择是否每 X 刻自动刷新商店视图（在 autoRefreshInterval 下设置）
+autoRefresh: false
+# 刷新商店视图的间隔（以刻为单位，20 刻 = 1 秒）
+# 警告：如果设置的间隔太低，且有很多在线玩家/商店，可能会导致日志记录
+autoRefreshInterval: 20
+# 选择是否在 "所有商店" 菜单中显示空商店（没有商品批量）
+displayEmptyShops: false
+# 默认玩家商店名称
+defaultShopName: "%player%'s shop"
+# 选择是否显示 GUI 通知（或者消息通知）
+enableGuiNotifications: true
+# 选择是否使用短日期格式，例如 h 代替 hours，m 代替 minutes 等。
+useShortDateFormats: true
+# 选择是否在商店 GUI 中显示箱子代替玩家头
+# 这对于较大的服务器很有用，因为获取皮肤可能会导致延迟。
+useChestShopPlaceholders: false
+# /playershop sell 命令的设置
+commandSell:
+  # 需要选择是否要求玩家指定数量而不是设置默认值 - 仅在 enableGui 设置为 false 时生效
+  requireQuantity: false
+  # 需要选择是否要求玩家指定价格而不是设置默认值 - 仅在 enableGui 设置为 false 时生效
+  requirePrice: false
+  # 选择玩家上架物品后是否广播消息
+  broadcast: true
+  # 设置广播的最小物品价格
+  broadcastMinPrice: 0.0
+
+# 选择某些 GUI 操作的声音。完整列表可在 https://docs.brcdev.net/#/sounds 查看
+sounds:
+  MAIN_MENU_OPEN: UI_BUTTON_CLICK
+  SHOPS_MENU_OPEN: UI_BUTTON_CLICK
+  SHOP_MENU_OPEN: UI_BUTTON_CLICK
+  ITEMS_MENU_OPEN: UI_BUTTON_CLICK
+  CATEGORIES_MENU_OPEN: UI_BUTTON_CLICK
+  CATEGORY_MENU_OPEN: UI_BUTTON_CLICK
+  SEARCH_SHOPS_OPEN: UI_BUTTON_CLICK
+  SEARCH_ITEMS_OPEN: UI_BUTTON_CLICK
+  SHOP_OWN_MENU_OPEN: UI_BUTTON_CLICK
+  UNCLAIMED_MENU_OPEN: UI_BUTTON_CLICK
+  SELL_ITEM: ENTITY_EXPERIENCE_ORB_PICKUP
+  BUY_ITEM: ENTITY_EXPERIENCE_ORB_PICKUP
+  CANCEL_ITEM: ENTITY_EXPERIENCE_ORB_PICKUP
+  NOTIFICATION_ERROR_OPEN: UI_BUTTON_CLICK
+  NOTIFICATION_WARNING_OPEN: UI_BUTTON_CLICK
+  NOTIFICATION_SUCCESS_OPEN: ENTITY_EXPERIENCE_ORB_PICKUP
+
+# 选择鼠标点击商店内的操作
+# 支持的点击类型：所有 ClickType 枚举类型 (https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/ClickType.html)
+# 支持的操作：BUY, CANCEL, CANCEL_OTHERS, NONE
+clickActions:
+  LEFT: BUY
+  RIGHT: CANCEL
+  SHIFT_RIGHT: CANCEL_OTHERS
+  MIDDLE: CANCEL_OTHERS
+
+# 使用这些选项在消息中格式化数字。
+numberFormat:
+  # 更改用于分隔可能不是整数的数字的小数点字符。
+  decimalSeparator: "."
+  # 更改用于分隔较大数字的逗号字符。
+  groupingSeparator: ","
+  # 指定整数显示的最小位数。
+  minimumIntegerDigits: 1
+  # 指定整数显示的最大位数。这有助于显示较大的数字。
+  maximumIntegerDigits: 32
+  # 指定分数显示的最小小数位。
+  minimumFractionDigits: 0
+  # 指定分数显示的最大小数位。
+  maximumFractionDigits: 8
+  # 指定是否在不适用时去除末尾的小数位。这将把 $100.00 改为 $100
+  hideFraction: true
+  shortScale:
+    # 指定是否希望在消息中显示的数字在超过一定数值时转换为短标度。这将把 "1,000,000" 
+    # 转换为 "100 万"。
+    enableShortScaleNumbering: false
+    # 指定短标度数字格式化开始的下限。任何超过此限制的数字都将转换为短标度数字格式。
+    shortScaleLimit: 1000000
+    # 指定显示大的短标度数字的小数部分的最大小数位数。（默认为2位小数）。
+    shortHandDecimalLimit: 2
+    # 指定显示较大的短标度数字的最大位数。（默认为32位）。
+    shortHandNumberLimit: 32
